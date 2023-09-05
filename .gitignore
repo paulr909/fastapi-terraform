@@ -139,8 +139,6 @@ dmypy.json
 *.tfstate
 *.tfstate.backup
 *.tfstate.lock.info*.terraform.lock.hcl
-# logs
-*.log
 
 # Directories
 .terraform/
