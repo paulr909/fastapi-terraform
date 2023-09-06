@@ -12,9 +12,9 @@ docker-compose up --build -d
 
 Docker commands:
 ```shell
-docker build -t fastapi-terrav1 .
+docker build -t fastapi-terraform .
 
-docker run --name fastapi-terrav1-container -p 80:80 -d -v $(pwd):/app fastapi-terrav1 
+docker run --name fastapi-terraform-container -p 80:80 -d -v $(pwd):/app fastapi-terraform 
 ```
 ## Deployment Process
 
