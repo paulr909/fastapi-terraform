@@ -1,14 +1,18 @@
 terraform {
-  backend "http" {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.18.0"
+    }
   }
 
-  #   backend "remote" {
-  #    organization = "paul-codes"
-  #
-  #    workspaces {
-  #      name = "fastapi-app-prod"
-  #    }
-  #  }
+  backend "s3" {
+    bucket         = "fastapi-app-tfstate"
+    key            = "state/terraform.tfstate"
+    region         = var.region
+    encrypt        = true
+    dynamodb_table = "fastapi-app_tf_lockid"
+  }
 }
 
 provider "aws" {

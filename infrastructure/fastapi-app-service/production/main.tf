@@ -45,8 +45,8 @@ module "fastapi-app-service" {
   autoscale_max = 4
   region = var.region
   app_count = 1
-  environment_name = "fastapi-app-dev"
-  app_environment = "development"
+  environment_name = "fastapi-app-prod"
+  app_environment = "production"
   domain_zone_id = data.terraform_remote_state.vpc.outputs.domain_zone_id
-  domain = "development.your-domain.com"
+  domain = "your-domain.com"
 }
